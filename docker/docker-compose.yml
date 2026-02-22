@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  monitoring-baseline:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      - SCENARIO=baseline
+    volumes:
+      - ../data:/app/data
+      - ../reports:/app/reports
+
+  monitoring-a:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      - SCENARIO=A
+    volumes:
+      - ../data:/app/data
+      - ../reports:/app/reports
+
+  monitoring-ab:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      - SCENARIO=AB
+    volumes:
+      - ../data:/app/data
+      - ../reports:/app/reports
+
+  monitoring-abc:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      - SCENARIO=ABC
+    volumes:
+      - ../data:/app/data
+      - ../reports:/app/reports
